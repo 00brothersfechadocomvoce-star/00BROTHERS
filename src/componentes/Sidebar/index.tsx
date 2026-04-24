@@ -3,18 +3,18 @@ import { Secoes } from '../../consts/Secoes';
 import Opcao from './Opcao';
 import { useState } from 'react';
 
+interface SidebarProps {
+  secaoAtiva: string | null;
+  onSelecionarSecao: (secao: string) => void;
+}
 
-const data = Secoes
-
-export default function Sidebar() {
-  const [ativo, setAtivo] = useState<string | null>(data[0]?.label);
-
+export default function Sidebar({ secaoAtiva, onSelecionarSecao }: SidebarProps) {
   return (
-   <View className="flex-1 border border-r-slate-300 w-1/5">
+   <View className="border border-r-slate-300 w-1/5 h-full">
       <FlatList
-         data={data}
-         renderItem={({ item }) => <Opcao label={item.label} icon={item.icon} selecionado={ativo === item.label} onPress={() => setAtivo(item.label)}/>}
-         keyExtractor={(item) => item.toString()}
+         data={Secoes}
+         renderItem={({ item }) => <Opcao label={item.label} icon={item.icon} selecionado={secaoAtiva === item.label} onPress={() => onSelecionarSecao(item.label)}/>}
+         keyExtractor={(item) => item.label}
          contentContainerStyle={{ paddingVertical: 20 }}
        />
    </View>

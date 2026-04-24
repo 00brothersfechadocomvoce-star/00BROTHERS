@@ -49,12 +49,6 @@ export const Secoes = [
     },
     {
         id: 9,
-        label: "Chatbot",
-        icon:"chatbubbles-outline",
-        screen: "contato",
-    },
-    {
-        id: 10,
         label: "Sair",
         icon:"exit-outline",
         screen: "contato",
