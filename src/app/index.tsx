@@ -36,7 +36,7 @@ export default function Index() {
           onSelecionarSecao={setSecaoAtiva} 
         />
 
-        <View className="flex-1 bg-white">
+        <View className="flex-1 bg-slate-50">
           {renderizarConteudo()}
         </View>
 
