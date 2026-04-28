@@ -1,6 +1,6 @@
 //Componentes
 import { View } from "react-native";
-import Cabecalho from "./../componentes/cabecalho";
+import Cabecalho from "../componentes/Cabecalho";
 import Sidebar from "../componentes/Sidebar";
 import FeedSocial from "./FeedSocial";
 import Noticias from "./Noticias";

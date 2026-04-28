@@ -1,16 +1,31 @@
 import { Text, TouchableOpacity } from 'react-native';
+import { useState } from 'react';
 import Area from './Area';
 
-interface BotaoAcaoProps { 
-    label: string;
-    funcao: () => void;
+interface BotaoAcaoProps {
+  label: string;
 }
 
+export default function BotaoAcao({ label }: BotaoAcaoProps) {
+  const [AreaVisivel, setAreaVisivel] = useState(false);
 
-export default function BotaoAcao({label}: BotaoAcaoProps) {
- return (
-   <TouchableOpacity className='rounded-2xl bg-white m-4 border border-slate-300 hover:border-yellow-400 transition justify-center py-2 px-4' activeOpacity={0.8}>
-        <Text className={`text-lg font-bold text-slate-800`}>{label}</Text>
-   </TouchableOpacity>
+  function ClicarArea() {
+    setAreaVisivel(!AreaVisivel);
+  }
+
+  return (
+    <>
+      {AreaVisivel ? (
+        <Area />
+      ) : (
+        <TouchableOpacity 
+          className='rounded-2xl bg-white border border-slate-300 justify-center py-2 px-4' 
+          activeOpacity={0.8} 
+          onPress={ClicarArea}
+        >
+          <Text className='text-lg font-bold text-slate-800'>{label}</Text>
+        </TouchableOpacity>
+      )}
+    </>
   );
 }
