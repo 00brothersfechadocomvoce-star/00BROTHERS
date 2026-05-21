@@ -20,7 +20,7 @@ export default function BotaoAcao({ label }: BotaoAcaoProps) {
       ) : (
         <TouchableOpacity 
           className='rounded-2xl bg-white border border-slate-300 justify-center py-2 px-4' 
-          activeOpacity={0.8} 
+          activeOpacity={0.5} 
           onPress={ClicarArea}
         >
           <Text className='text-lg font-bold text-slate-800'>{label}</Text>
